@@ -8,7 +8,7 @@ function move(element) {
         element.style.bottom = bottom + 'px'
     }
 
-    function moveWithArrowKeys(left, bottom, callback){
+    function moveWithArrowKeys(left, bottom, callback){  // callback added
         let direction = null;
         let x = left;
         let y = bottom;
@@ -51,12 +51,12 @@ function move(element) {
             if(e.key === 'ArrowDown'){
                 direction = 'south'
             }
-            callback(direction)
+            callback(direction)           // callback (direction) called here.
         })
     // stops the character when key is released.
         document.addEventListener('keyup', function(e){
             direction = null
-            callback(direction)
+            callback(direction)     // (direction) passed as an arguement inside our event listener.
         })
     }
 

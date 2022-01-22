@@ -3,8 +3,8 @@ move(inventory).to(0, 0)
 
 
 const character = newImage('assets/green-character/static.gif') 
-    
-    function handleDirectionChange(direction){
+  // sets appropriate image for the direction our character is moving.
+    function handleDirectionChange(direction){  // function passed to withArrowKeys, below. (direction) added as a parameter.
         if(direction === null){
             character.src = `assets/green-character/static.gif`
         }
@@ -22,7 +22,7 @@ const character = newImage('assets/green-character/static.gif')
         }
     }
 
-move(character).withArrowKeys(100, 250, handleDirectionChange)
+move(character).withArrowKeys(100, 250, handleDirectionChange)  
 
 move(newImage('assets/tree.png')).to(200, 450)
 move(newImage('assets/pillar.png')).to(350, 250)
